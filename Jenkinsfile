@@ -16,7 +16,7 @@ pipeline {
     stage('deploy') {
         steps {
             echo "elect an ENV ${params.Enviornments}"
-            echo "cap ${params.Enviornments} deploy -s branch=${params.Branches}"
+            echo "cap ${params.Enviornments} deploy -s branch=${params.BRANCH}"
         }
     }
   }
