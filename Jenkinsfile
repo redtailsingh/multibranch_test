@@ -1,10 +1,10 @@
 pipeline {
   agent any
   parameters {
-    choice(name: Enviornments,
+    choice(name: 'Enviornments',
         choices: 'development\ntesting\nproduction',
         description: 'select an env')
-    choice(name: Branches',
+    choice(name: 'Branches',
         choices: 'branch1\nbranch2\nbranch3',
         description: 'select the branch)
   }
