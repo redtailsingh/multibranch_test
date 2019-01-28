@@ -6,7 +6,7 @@ pipeline {
         description: 'select an env')
     choice(name: 'Branches',
         choices: 'branch1\nbranch2\nbranch3',
-        description: 'select the branch)
+        description: 'select the branch')
   }
   stages {
     stage('build') {
