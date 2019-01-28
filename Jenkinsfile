@@ -11,15 +11,15 @@ pipeline {
   stages {
     stage('build') {
         steps {
-            echo 'select a branch ${params.Branches}'
-            echo 'git checkout ${params.Branches}'
-            echo 'bundle install'
+            echo "select a branch ${params.Branches}"
+            echo "git checkout ${params.Branches}"
+            echo "bundle install"
         }
     }
     stage('deploy') {
         steps {
-            echo 'elect an ENV ${params.Enviornments}'
-            echo 'cap ${params.Enviornments} deploy -s branch=${params.Branches}'
+            echo "elect an ENV ${params.Enviornments}"
+            echo "cap ${params.Enviornments} deploy -s branch=${params.Branches}"
         }
     }
   }
