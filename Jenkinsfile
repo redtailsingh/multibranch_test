@@ -3,11 +3,11 @@ pipeline {
   parameters {
     choice(name: 'ENVIORNMENTS',
         choices: '''\
-		gr_development\
-		gr_staging\
-		gr_production_api\
-		gr_patner_one\
-		gr_speak_mobile\
+		gr_development\n\
+		gr_staging\n\
+		gr_production_api\n\
+		gr_patner_one\n\
+		gr_speak_mobile\n\
 	''',
         description: 'select an env')
     gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
