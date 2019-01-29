@@ -2,14 +2,13 @@ pipeline {
   agent any
   parameters {
     choice(name: 'ENVIORNMENT',
-        choices: '''\
-		\n
+        choices: '''\n
 		gr_development\n
 		gr_staging\n
 		gr_production_api\n
 		gr_patner_one\n
-		gr_speak_mobile\n
-	''',
+		gr_speak_mobile
+	'''.stripIndent(),
         description: 'please select an enviornment')
     gitParameter branchFilter: 'origin/(.*)', defaultValue: '', name: 'BRANCH', type: 'PT_BRANCH'
   }
