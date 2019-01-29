@@ -14,7 +14,7 @@ pipeline {
     }
     stage('build') {
         steps {
-            sh "rvm 2.3.0"
+            sh "rvm use 2.3.0"
             sh "bundle install"
         }    
     }
