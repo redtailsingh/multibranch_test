@@ -9,9 +9,9 @@ pipeline {
   stages {
     stage('Checkout branch') {
         steps {
-	    git branch
+	    sh "git branch"
             git branch: "${params.BRANCH}", url: 'https://github.com/redtailsingh/multibranch_test.git'
-            git branch
+            sh "git branch"
         }
     }
     stage('build') {
