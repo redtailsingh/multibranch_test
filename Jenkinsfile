@@ -14,9 +14,10 @@ pipeline {
     }
     stage('build') {
         steps {
+            sh "rvm 2.3.0"
             sh "bundle install"
-	    sh "rvm 2.3.0"
-        }    }
+        }    
+    }
     stage('deploy') {
         steps {
             echo "cap ${params.ENVIORNMENTS} deploy -s branch=${params.BRANCH}"
