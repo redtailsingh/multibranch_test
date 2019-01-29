@@ -7,11 +7,9 @@ pipeline {
     gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
   }
   stages {
-    stage('Checkout branch') {
+    stage('checkout SCM') {
         steps {
-	    sh "git branch"
             git branch: "${params.BRANCH}", url: 'https://github.com/redtailsingh/multibranch_test.git'
-            sh "git branch"
         }
     }
     stage('build') {
@@ -26,4 +24,3 @@ pipeline {
     }
   }
 }
-
