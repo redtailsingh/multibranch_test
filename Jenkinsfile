@@ -2,13 +2,7 @@ pipeline {
   agent any
   parameters {
     choice(name: 'ENVIORNMENTS',
-        choices: '''\
-		gr_development\
-		gr_staging\
-		gr_production_api\
-		gr_patner_one\
-		gr_speak_mobile\
-	''',
+        choices: 'gr_development\ngr_staging\ngr_production_api\ngr_patner_one\ngr_speak_mobile\n',
         description: 'select an env')
     gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
   }
