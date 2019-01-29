@@ -3,10 +3,10 @@ pipeline {
   parameters {
     choice(name: 'ENVIORNMENTS',
         choices: '''\
-		gr_development\n\
-		gr_staging\n\
-		gr_production_api\n\
-		gr_patner_one\n\
+		gr_development\
+		gr_staging\
+		gr_production_api\
+		gr_patner_one\
 		gr_speak_mobile\
 	''',
         description: 'select an env')
