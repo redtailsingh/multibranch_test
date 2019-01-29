@@ -2,7 +2,8 @@ pipeline {
   agent any
   parameters {
     choice(name: 'ENVIORNMENT',
-        choices: '''\n
+        choices: '''\
+		\n
 		gr_development\n
 		gr_staging\n
 		gr_production_api\n
