@@ -14,9 +14,9 @@ pipeline {
     }
     stage('build') {
         steps {
-            sh "rvm use 2.3.0"
+            sh "#!/bin/bash -l rvm use 2.3.0"
             sh "bundle install"
-        }    
+        }
     }
     stage('deploy') {
         steps {
