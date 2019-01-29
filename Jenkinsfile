@@ -26,8 +26,10 @@ pipeline {
     }
     stage('deploy') {
         steps {
-            if (params.BRANCH && params.ENVIORNMENT) {
-            	echo "cap ${params.ENVIORNMENT} deploy -s branch=${params.BRANCH}"
+	    script {
+            	if (params.BRANCH && params.ENVIORNMENT) {
+            		echo "cap ${params.ENVIORNMENT} deploy -s branch=${params.BRANCH}"
+	    	}
 	    }
         }
     }
