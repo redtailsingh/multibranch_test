@@ -14,7 +14,7 @@ pipeline {
     }
     stage('build') {
         steps {
-            bundle install
+            sh "bundle install"
         }
     }
     stage('deploy') {
