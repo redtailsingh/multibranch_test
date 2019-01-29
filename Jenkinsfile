@@ -1,16 +1,17 @@
 pipeline {
   agent any
   parameters {
-    choice(name: 'ENVIORNMENTS',
+    choice(name: 'ENVIORNMENT',
         choices: '''\
-		gr_development\n\
-		gr_staging\n\
-		gr_production_api\n\
-		gr_patner_one\n\
-		gr_speak_mobile\n\
+		\n
+		gr_development\n
+		gr_staging\n
+		gr_production_api\n
+		gr_patner_one\n
+		gr_speak_mobile\n
 	''',
-        description: 'select an env')
-    gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
+        description: 'please select an enviornment')
+    gitParameter branchFilter: 'origin/(.*)', defaultValue: '', name: 'BRANCH', type: 'PT_BRANCH'
   }
   stages {
     stage('checkout SCM') {
@@ -25,7 +26,9 @@ pipeline {
     }
     stage('deploy') {
         steps {
-            echo "cap ${params.ENVIORNMENTS} deploy -s branch=${params.BRANCH}"
+            if (params.BRANCH && params.ENVIORNMENT) {
+            	echo "cap ${params.ENVIORNMENT} deploy -s branch=${params.BRANCH}"
+	    }
         }
     }
   }
